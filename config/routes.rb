@@ -1,4 +1,9 @@
 Ideas::Application.routes.draw do
+  match 'index' => 'system#index_redirect', :as => "index", :via => "get"
+  match 'login' => 'system#login', :as => "login", :via => "get"
+  match 'login_auth' => 'system#login_auth', :as => "login_auth", :via => "post"
+  match 'logout' => 'system#logout', :as => "logout", :via => "get"
+
   resources :comments
 
 
@@ -57,7 +62,7 @@ Ideas::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  root :to => 'system#index_redirect'
 
   # See how all your routes lay out with "rake routes"
 
