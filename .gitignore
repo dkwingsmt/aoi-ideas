@@ -17,3 +17,6 @@
 # Others
 *.swp
 *~
+
+_command
+_old
