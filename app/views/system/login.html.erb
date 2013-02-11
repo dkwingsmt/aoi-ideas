@@ -1,0 +1,21 @@
+<% unless @error.blank? %>
+    <div class="alert alert-error", id="error_explanation">
+        <%= @error %>
+    </div>
+<% end %>
+
+<%= form_tag login_auth_path, :class =>"form-login" do %>
+    <h2 class="form-login-heading">Sign in</h2>
+    <%= label_tag :email %><br />
+    <%= email_field_tag :email, @email, :class => "input-block-level" %><br />
+   
+    <%= label_tag :password %><br />
+    <%= password_field_tag :password, nil, :class => "input-block-level" %><br />
+
+    <%= hidden_field_tag :remember_me, '0' %>
+    <%= check_box_tag :remember_me %>
+    <%= label_tag :remember_me, "Remember me", :class => "inline-text" %><br />
+   
+    <br />
+    <%= submit_tag "Log in", :class => "btn btn-success btn-large" %>
+<% end %>

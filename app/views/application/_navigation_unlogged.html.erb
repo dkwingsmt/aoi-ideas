@@ -1,0 +1,29 @@
+<div class="navbar navbar-static-top" id="navbar">
+    <div class="navbar-inner">
+        <div class="container-narrow">
+
+            <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+            <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </a>
+
+            <%= link_to index_path, :class => "brand" do %>
+                AOI Ideas
+            <% end %>
+
+
+            <div>
+                <div class="nav-collapse collapse">
+                    <ul class="nav">
+                        <li><%= link_to "All ideas", entries_path%></li>
+                    </ul>
+                    <div class="navbar-form pull-right inline-form">
+                        <%= button_to "Log in", login_path, :class => "btn btn-success", :method => "get" %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

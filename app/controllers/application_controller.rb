@@ -10,7 +10,7 @@ class ApplicationController < ActionController::Base
     def current_user
         if logged_in?
             if @user ||= User.find(session[:user_id])
-                return user
+                return @user
             else
                 session.delete :user_id
             end

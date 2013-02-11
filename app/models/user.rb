@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
     attr_accessible :new_password, :new_password_confirmation
 
     before_save :hash_and_save_password, :if => :password_changed?
+    before_save :downcase_email
 
     has_many :entries, :order => "updated_at ASC"
     has_many :comments, :order => "updated_at ASC"
@@ -45,7 +46,7 @@ class User < ActiveRecord::Base
     validates_confirmation_of :new_password, :if => :password_changed?
 
     def self.authenticate(email, password)
-        if user = find_by_email(email)
+        if user = find_by_email(email.downcase)
             if BCrypt::Password.new(user.hashed_password).is_password? password
                 return user
             end
@@ -64,5 +65,9 @@ class User < ActiveRecord::Base
 
     def hash_and_save_password
         self.hashed_password = BCrypt::Password.create(new_password)
+    end
+
+    def downcase_email
+        self.email.downcase!
     end
 end
