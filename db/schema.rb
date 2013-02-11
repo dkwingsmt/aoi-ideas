@@ -13,19 +13,19 @@
 ActiveRecord::Schema.define(:version => 20130209014825) do
 
   create_table "comments", :force => true do |t|
-    t.integer  "user_id",                    :null => false
-    t.integer  "entry_id",                   :null => false
-    t.text     "body",       :default => ""
-    t.string   "disabled",                   :null => false
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
+    t.integer  "user_id",    :null => false
+    t.integer  "entry_id",   :null => false
+    t.text     "body"
+    t.string   "disabled",   :null => false
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "entries", :force => true do |t|
     t.integer  "user_id",                       :null => false
     t.string   "title",      :default => ""
-    t.text     "abstract",   :default => ""
-    t.text     "body",       :default => ""
+    t.text     "abstract"
+    t.text     "body"
     t.integer  "category",                      :null => false
     t.boolean  "published",                     :null => false
     t.boolean  "disabled",   :default => false, :null => false
