@@ -7,10 +7,10 @@ class Comment < ActiveRecord::Base
     BODY_MAX_LENGTH = 200
 
     validates :user_id, 
-        :presence => true,
-        :numericality => { :only_integer => true } 
+        :presence => {:message => "You must login before making comment."},
+        :numericality => { :only_integer => true }
     validates :user, 
-        :presence => true
+        :presence => {:message => "You must login before making comment."}
     validates :entry_id, 
         :presence => true,
         :numericality => { :only_integer => true } 

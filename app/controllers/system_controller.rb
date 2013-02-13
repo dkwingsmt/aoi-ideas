@@ -28,7 +28,7 @@ class SystemController < ApplicationController
 
     def logout
         session.delete :user_id
-        redirect_to :index_path
+        redirect_to login_path
     end
 
     private

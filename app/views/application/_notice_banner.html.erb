@@ -1,0 +1,16 @@
+<div id="notice", class="span6">
+    <% case notice[:type] %>
+    <% when "success" %>
+        <div class="alert alert-success">
+            <%= notice[:msg] %>
+        </div>
+    <% when "error" %>
+        <div class="alert alert-error">
+            <ul>
+            <% notice[:msgs].each do |m| %>
+                <li><%= m %></li>
+            <% end %>
+            </ul>
+        </div>
+    <% end %>
+</div>

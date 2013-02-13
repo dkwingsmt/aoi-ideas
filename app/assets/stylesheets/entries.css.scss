@@ -1,3 +1,56 @@
 // Place all the styles related to the entries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px 10px 20px 10px
+}
+
+#title {
+    margin-bottom: 20px;
+}
+#appendix {
+    margin-top: 20px;
+    padding-left: 6px;
+}
+
+.hr-title {
+    $COLOR: #555;
+    color: $COLOR;
+    background-color: $COLOR;
+    margin-top: -12px;
+    height: 0px;
+}
+
+#comments {
+    margin-top: 11px;
+    padding: 1px 5px 1px 3px;
+    border-top: 1px dotted #5a5;
+}
+
+.comment {
+    padding: 9px 0 8px 0;
+    border-bottom: 1px dotted #bdb;
+    .signature {
+        padding-left: 10px;
+        .date {
+            padding-left: 7px;
+        }
+    }
+}
+
+#make_comment {
+    margin-top: 20px;
+    margin-left: 13px;
+    textarea {
+        height: 40px;
+        width: 100%;
+    }
+}
+#cant_make_comment {
+    margin-top: 20px;
+    margin-left: 13px;
+}

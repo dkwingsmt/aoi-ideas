@@ -2,7 +2,8 @@ Ideas::Application.routes.draw do
     match 'index' => 'system#index_redirect', :as => "index", :via => "get"
     match 'login' => 'system#login', :as => "login", :via => "get"
     match 'login' => 'system#login_auth', :as => "login_auth", :via => "post"
-    match 'logout' => 'system#logout', :as => "logout", :via => "get"
+    match 'logout' => 'system#logout', :as => "logout", :via => ["post","get"]
+    match 'error' => 'system#error', :as => "error", :via => "get"
    
     resources :comments
    

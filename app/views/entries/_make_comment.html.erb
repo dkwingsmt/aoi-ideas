@@ -1,0 +1,15 @@
+<% if !logged_in? %>
+    <%= form_for :comment, 
+        :html => { :id => "make_comment", :class => "span5"} ,
+        :url => {:controller => "comments", :action => "create"} do |f| %>
+        <%= f.hidden_field :entry_id, :value => @entry.id %>
+        <%= f.text_area :body, 
+            :placeholder => "What do you think?"
+        %>
+        <br \>
+        <%= f.submit "Comment", :class => "btn pull-right"%>
+    <% end %>
+<% else %>
+    <span id="cant_make_comment", class="pull-right muted">
+        You must <%= link_to "log in", login_path %> before you can comment. </span>
+<% end %>

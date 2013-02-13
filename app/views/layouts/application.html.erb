@@ -21,11 +21,18 @@
 
 <div id="content", class="container-narrow content">
 
+    <% if notice = flash[:notice] %>
+        <%= render :partial => "notice_banner", :locals => {:notice => notice} %>
+    <% end %>
+
     <%= yield %>
 
     <div id="footer">
+        <small>
     V2.10 alpha 
-    &copy;2011 <a href="http://www.innovation-china.org/">创新社(AOI)</a>
+    &copy;2011 <a href="http://www.innovation-china.org/">创新社(AOI)</a> 
+    Powered by <a href="http://glyphicons.com/">GLYPHICONS</a>
+        </small>
     </div>
 
 </div>
