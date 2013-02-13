@@ -1,52 +1,58 @@
-<div class="row">
-    <div class="span7 card">
+<div class="span7 card">
 
-        <div class="row">
-            <div id="leftbar", class="span1">
-                <div class="label label-important", style="width:50px;height:50px;">
-                    <h3>P</h3>
+    <div class="row", id="title-row">
+        <div class="span1", id="title-icon">
+            <div class="pull-right">
+                <%= image_tag title_icon(@entry.category)%>
+            </div>
+        </div>
+        <div class="span6", id="title">
+            <div>
+                <h3><%= @entry.title %></h3>
+            </div>
+            <hr class="hr-title">
+        </div>
+    </div>  <!-- row of title -->
+
+    <div class="row", id="body-row">
+        <div id="leftbar", class="span1">
+            123
+        </div>
+
+        <div id="mainbar", class="span6">
+
+            <div id="body">
+                <%= @entry.body %>
+            </div>
+
+            <div id="appendix", class="row">
+                <div class="span2 muted">
+                    <small>favorite | share this link</small>
+                </div>
+                <div id="info", class="span2 pull-right muted">
+                    <small>
+                        asked <%= format_time(@entry.updated_at) %>, <br />
+                        <%= linked_username(@entry.user) %>
+                    </small>
                 </div>
             </div>
 
-            <div id="mainbar", class="span6">
-                <div id="title">
-                    <h3><%= @entry.title %></h3>
-                </div>
-
-                <hr class="hr-title">
-
-                <div id="body">
-                    <%= @entry.body %>
-                </div>
-
-                <div id="appendix", class="row">
-                    <div class="span2 muted">
-                        <small>favorite | share this link</small>
+            <div id="comments">
+                <% @entry.comments.each do |c| %>
+                    <div class="comment">
+                        <%= c.body %> 
+                        <span class="signature muted">
+                            -- <%= linked_username(c.user) %> 
+                            <span class="date"><%= format_time(c.updated_at) %></span>
+                        </span>
                     </div>
-                    <div id="info", class="span2 pull-right muted">
-                        <small>
-                            asked <%= format_time(@entry.updated_at) %>, <br />
-                            <%= linked_username(@entry.user) %>
-                        </small>
-                    </div>
-                </div>
+                <% end %>
 
-                <div id="comments">
-                    <% @entry.comments.each do |c| %>
-                        <div class="comment">
-                            <%= c.body %> 
-                            <span class="signature muted">
-                                -- <%= linked_username(c.user) %> 
-                                <span class="date"><%= format_time(c.updated_at) %></span>
-                            </span>
-                        </div>
-                    <% end %>
+                <%= render "make_comment" %>
 
-                    <%= render "make_comment" %>
-
-                </div>
             </div>
         </div>
 
-    </div>
-</div>
+    </div>  <!-- row of body -->
+
+</div>  <!-- outest span -->

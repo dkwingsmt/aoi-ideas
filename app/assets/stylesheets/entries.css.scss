@@ -10,8 +10,25 @@
 }
 
 #title {
-    margin-bottom: 20px;
+    div {
+        margin-bottom: 20px;
+    }
+    margin-bottom: 0;
 }
+
+#title-icon {
+    padding: 10px 0px 0 0px ;
+    $SIZE: 60px;
+    div {
+        margin-right: -5px;
+        padding: 0;
+        border-radius: 10px;
+        overflow:hidden; 
+        width: $SIZE;
+        height: $SIZE;
+    }
+}
+
 #appendix {
     margin-top: 20px;
     padding-left: 6px;

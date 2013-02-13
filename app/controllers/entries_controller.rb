@@ -1,6 +1,7 @@
 class EntriesController < ApplicationController
 
-    helper_method :class_of_category
+    helper_method :class_of_category, :title_icon
+    
 
     # GET /entries
     # GET /entries.json
@@ -12,7 +13,7 @@ class EntriesController < ApplicationController
             format.json { render :json => @entries }
         end
     end
-   
+
     # GET /entries/1
     # GET /entries/1.json
     def show
@@ -23,7 +24,7 @@ class EntriesController < ApplicationController
             format.json { render :json => @entry }
         end
     end
-   
+
     # GET /entries/new
     # GET /entries/new.json
     def new
@@ -34,7 +35,7 @@ class EntriesController < ApplicationController
             format.json { render :json => @entry }
         end
     end
-   
+
     # GET /entries/1/edit
     def edit
         @entry = Entry.find(params[:id])
@@ -98,5 +99,15 @@ class EntriesController < ApplicationController
         end
     end
 
+    def title_icon(category)
+        case category
+        when Entry::CATEGORY_PROBLEM
+            "lightbulb-error.png"
+        when Entry::CATEGORY_IDEA
+            "lightbulb-success.png"
+        when Entry::CATEGORY_ARTICLE
+            "talk-info.png"
+        end
+    end
 
 end
