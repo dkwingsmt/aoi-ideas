@@ -22,10 +22,12 @@
 <div id="content", class="container-narrow content">
 
     <% if notice = flash[:notice] %>
-        <%= render :partial => "notice_banner", :locals => {:notice => notice} %>
+        <div class="row", id="notice-banner">
+            <%= render :partial => "notice_banner", :locals => {:notice => notice} %>
+        </div>
     <% end %>
 
-    <div class="row">
+    <div class="row", id="content">
         <%= yield %>
     </div>
 

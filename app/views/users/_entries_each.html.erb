@@ -1,0 +1,41 @@
+<% page_link = "'" + entry_path(entry.id) + "'" %>
+<div class="entry-each-wrap">
+    <div class="row entry-each">
+        <div class="span2 entry-status", 
+            onlick='window.location.href=<%=page_link%>;', 
+            style="cursor: pointer;">
+            <div class="votes">
+                <span class="description">votes</span>
+                <span class="number"><%= entry.marked_users.count %></span>
+            </div>
+            <div class="comments">
+                <span class="description">comments</span>
+                <span class="number"><%= entry.comments.count %></span>
+            </div>
+            <div class="views">
+                <span class="description">views</span>
+                <span class="number"><%= 0 %></span>
+            </div>
+        </div>
+
+        <div class="span5 entry-main">
+            <span class="title">
+                <%= image_tag title_icon(entry.category), :class => "title-icon" %>
+                <%= link_to entry do %>
+                    <%= entry.title %>
+                <% end %>
+            </span>
+            <span class="body"><%= entry.abstract %></span>
+        </div>
+
+        <span class="pull-right muted signature">
+            <small>
+                by <%= linked_username(entry.user) %>
+                <%= format_time(entry.updated_at) %>
+            </small>
+        </span>
+
+    </div>
+
+    <hr>
+</div>

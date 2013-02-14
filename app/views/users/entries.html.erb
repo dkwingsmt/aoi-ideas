@@ -1,0 +1,7 @@
+<div class="span7 card">
+    <div>
+        <% @entries.each do |e| %>
+            <%= render :partial => "entries_each", :locals => {:entry => e} %>
+        <% end %>
+    </div>
+</div>  <!-- outest span -->

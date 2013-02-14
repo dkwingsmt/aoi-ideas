@@ -1,7 +1,6 @@
 class EntriesController < ApplicationController
 
-    helper_method :class_of_category, :title_icon
-    
+    helper_method :class_of_category
 
     # GET /entries
     # GET /entries.json
@@ -96,17 +95,6 @@ class EntriesController < ApplicationController
             "entry-problem"
         else
             raise "Invalid entry category.".to_yaml
-        end
-    end
-
-    def title_icon(category)
-        case category
-        when Entry::CATEGORY_PROBLEM
-            "lightbulb-error.png"
-        when Entry::CATEGORY_IDEA
-            "lightbulb-success.png"
-        when Entry::CATEGORY_ARTICLE
-            "talk-info.png"
         end
     end
 

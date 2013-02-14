@@ -1,3 +1,72 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.entry-each-wrap {
+
+    .entry-each {
+        display: block;
+
+        .entry-status {
+
+            margin-bottom: 20px;
+
+            .votes, .comments, .views {
+                float: left;
+                width: 40px;
+                margin-left: 5px;
+                margin-right: 5px;
+                text-align: center;
+
+                .description {
+                    display: block;
+                    font-size: 12px;
+                    margin-bottom: 6px;
+                }
+                .number {
+                    font-size: 20px;
+                }
+            }
+            .comments {
+                width: 60px;
+            }
+        }
+
+        .entry-main {
+            padding-bottom: 0px;
+
+            .title-icon {
+                $SIZE: 20px;
+                width: $SIZE;
+                height: $SIZE;
+                overflow: hidden;
+                float: left;
+                border-radius: 5px;
+                margin-right: 10px;
+            }
+
+            .title {
+                display: block;
+                font-size: 17px;
+                margin-bottom: 10px;
+            }
+
+            .body {
+                margin-bottom: 6px;
+                display: inline;
+            }
+
+        }
+
+        .signature {
+            float: bottom;
+            margin-bottom: 2px;
+        }
+
+    }
+
+    hr {
+        margin-top: 2px;
+        margin-bottom: 16px;
+    }
+}

@@ -5,7 +5,8 @@ class Entry < ActiveRecord::Base
     belongs_to :user
     has_many :marks
     has_many :comments
-    has_many :marked_users, :class_name => "User", :through => "marks"
+    has_many :marked_users, :class_name => "User", :through => :marks,
+        :source => "user"
     
     TITLE_MAX_LENGTH = 200
     ABSTRACT_MAX_LENGTH = 400
