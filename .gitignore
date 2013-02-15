@@ -21,3 +21,8 @@
 _command
 _old
 tags
+
+# For secure reason
+# For every new cloner, please copy from config/database.yml.bk 
+# and modify the password
+config/database.yml

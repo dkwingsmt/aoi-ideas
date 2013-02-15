@@ -1,35 +1,8 @@
-<h1>Listing entries</h1>
-
-<table>
-  <tr>
-    <th>User</th>
-    <th>Title</th>
-    <th>Abstract</th>
-    <th>Body</th>
-    <th>Category</th>
-    <th>Published</th>
-    <th>Disabled</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @entries.each do |entry| %>
-  <tr>
-    <td><%= entry.user_id %></td>
-    <td><%= entry.title %></td>
-    <td><%= entry.abstract %></td>
-    <td><%= entry.body %></td>
-    <td><%= entry.category %></td>
-    <td><%= entry.published %></td>
-    <td><%= entry.disabled %></td>
-    <td><%= link_to 'Show', entry %></td>
-    <td><%= link_to 'Edit', edit_entry_path(entry) %></td>
-    <td><%= link_to 'Destroy', entry, :method => :delete, :data => { :confirm => 'Are you sure?' } %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Entry', new_entry_path %>
+<div class="span7 card">
+    <h1>Listing entries</h1>
+    <div>
+        <% @entries.each do |e| %>
+            <%= render :partial => "entries_each", :locals => {:entry => e} %>
+        <% end %>
+    </div>
+</div>  <!-- outest span -->

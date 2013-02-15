@@ -39,7 +39,7 @@ class User < ActiveRecord::Base
         :length => { :maximum => 200 }
     validates :name, 
         :presence => true,
-        :length => { :maximum => 10 }
+        :length => { :maximum => 30 }
     validates :new_password, :new_password_confirmation,
         :presence => true,
         :length => { :minimum => 6, :maximum => 20 }
